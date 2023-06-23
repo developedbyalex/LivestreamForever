@@ -4,12 +4,12 @@ import subprocess
 import threading
 
 # Replace with the path to your audio folder and background image
-audio_folder = r'C:\Users\Rooft\Desktop\Python projects\24-7 Livestream\audio'
-background_image = r'C:\Users\Rooft\Desktop\Python projects\24-7 Livestream\background\bg.jpg'
+audio_folder = r'AUDIO/FOLDER/HERE'
+background_image = r'/BACKGROUND/FILE/HERE.jpg'
 
 # Replace with your own YouTube Live stream URL and stream key
 stream_url = 'rtmp://a.rtmp.youtube.com/live2'
-stream_key = '32h3-w2j9-et97-8r9p-8v77'
+stream_key = 'STREAM_KEY_HERE'
 
 # Get a random audio file from the folder
 def get_random_audio_file():
