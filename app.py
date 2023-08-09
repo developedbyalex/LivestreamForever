@@ -2,14 +2,16 @@ import os
 import random
 import subprocess
 import threading
+import art
 
-# Replace with the path to your audio folder and background image
-audio_folder = r'AUDIO/FOLDER/HERE'
-background_image = r'/BACKGROUND/FILE/HERE.jpg'
+# Display ASCII art title
+print(art.text2art("LofiStream"))
 
-# Replace with your own YouTube Live stream URL and stream key
-stream_url = 'rtmp://a.rtmp.youtube.com/live2'
-stream_key = 'STREAM_KEY_HERE'
+# Ask for user input
+audio_folder = input("Enter the path to your audio folder: ")
+background_image = input("Enter the path to your background image (jpg, png, or gif): ")
+stream_url = input("Enter your YouTube Live stream URL: ")
+stream_key = input("Enter your stream key: ")
 
 # Get a random audio file from the folder
 def get_random_audio_file():
@@ -22,7 +24,7 @@ def start_streaming(audio_file):
     subprocess.call([
         'ffmpeg',
         '-re',
-        '-loop', '1',
+        '-ignore_loop', '0',  # This flag is used for looping animated GIFs
         '-i', background_image,
         '-i', audio_file,
         '-c:v', 'libx264',
